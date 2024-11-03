@@ -1,0 +1,97 @@
+$background-gradient: linear-gradient(to bottom, #1e4460, #0c2335);
+$primary-color: #eaf6ff;
+$secondary-color: #ffffff;
+$table-header-color: #1a3f5b;
+$button-color: #1a3f5b;
+$button-hover-color: #eaf6ff;
+
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background: $background-gradient;
+    color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    // Visa knappen när användaren scrollar ner
+    &:has(:nth-last-child(n)) #backToTop {
+        display: block;
+    }
+}
+
+
+header, section {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+h1, h2, h3 {
+    color: $primary-color;
+}
+
+
+p {
+    color: $secondary-color; // Sätter färgen på alla <p> till vit
+}
+
+
+img {
+    max-width: 150px;
+    border-radius: 75px; // Gör bilden rund
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: $table-header-color;
+
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+        color: $primary-color; // Gör texten i tabellen vit
+
+
+        th {
+            background-color: $table-header-color; // Färgen på tabellhuvudet
+        }
+    }
+}
+
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $button-color;
+    color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-decoration: none; // Ta bort understrykning
+    display: none; // Döljer knappen som standard
+
+
+    &:hover {
+        background-color: $button-hover-color;
+        color: $button-color;
+    }
+}
+
+
+@media (max-width: 600px) {
+    header, section {
+        margin: 10px;
+        padding: 10px;
+    }
+}
